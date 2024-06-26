@@ -122,7 +122,7 @@ if __name__ == '__main__':
 
     # Loads the correct samples from the file and vectorize
     file_right  = []
-    for line in open(f"../../data/{args.dataset}/{args.model}/Train_{args.model_setting}_right.jsonl", "r"):
+    for line in open(f"../../result/{args.dataset}/{args.model}/Train_{args.model_setting}_right.jsonl", "r"):
         file_right.append(json.loads(line.strip()))
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     model = BertModel.from_pretrained('bert-base-uncased')
@@ -141,7 +141,7 @@ if __name__ == '__main__':
     file_wrong  = []
     file_query = []
     question_set = []
-    for line in open(f"../../data/{args.dataset}/{args.model}/Train_{args.model_setting}_wrong.jsonl", "r"):
+    for line in open(f"../../result/{args.dataset}/{args.model}/Train_{args.model_setting}_wrong.jsonl", "r"):
         file_wrong.append(json.loads(line.strip()))
         if args.dataset == "mbpp":
             question_set.append(json.loads(line.strip())["prompt"])
@@ -214,11 +214,11 @@ if __name__ == '__main__':
             
         message_list.append({"prompt":prompt, "question":user_question})
 
-    print(message_list[0]["prompt"])
+    
     # Parallel calls the openai API
-    # final_messages = parallel_calls(message_list)
-    # with jsonlines.open(f"../../data/{args.dataset}/{args.model}/l2l_neighbor_5_epoch_1.jsonl", 'a') as fw:
-    #     fw.write(final_messages)
+    final_messages = parallel_calls(message_list)
+    with jsonlines.open(f"../../result/{args.dataset}/{args.model}/LaI_{args.model_setting}.jsonl", 'a') as fw:
+        fw.write(final_messages)
     
 
 
