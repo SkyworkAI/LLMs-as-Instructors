@@ -217,7 +217,7 @@ if __name__ == '__main__':
     
     # Parallel calls the openai API
     final_messages = parallel_calls(message_list)
-    with jsonlines.open(f"../../result/{args.dataset}/{args.model}/LaI_LEC_{args.model_setting}.jsonl", 'a') as fw:
+    with jsonlines.open(f"../../result/{args.dataset}/{args.model}/LaI_LEC_{args.model_setting}_k_{args.k}.jsonl", 'a') as fw:
         fw.write(final_messages)
     
 

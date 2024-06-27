@@ -8,11 +8,22 @@ export OPENAI_API_KEY='your_api_key_here'
 # --dataset defines which dataset to use, options include 'gsm8k', 'mbpp', and 'mmlu'
 # --sample_size sets the number of samples to process, here it is set to 3000
 # --k sets the number nearest sample 
-python ../instruction_get/LLMs_as_Instructors_LEC.py \
-    --model mistral \
-    --model_setting raw \
-    --dataset gsm8k \
-    --sample_size 3000 \
-    --k 2
+MODEL="mistral"
+MODEL_SETTING="raw"
+DATASET="gsm8k"
+SAMPLE_SIZE=3000
+K=2
 
+python ../instruction_get/LLMs_as_Instructors_LEC.py \
+    --model $MODEL \
+    --model_setting $MODEL_SETTING \
+    --dataset $DATASET \
+    --sample_size $SAMPLE_SIZE \
+    --k $K
+
+python extract_training_samples.py \
+    --model $MODEL \
+    --model_setting "LaI_LEC_${MODEL_SETTING}_k_${K}" \
+    --dataset $DATASET \
+    --sample_size $SAMPLE_SIZE \
 
