@@ -71,10 +71,10 @@ if __name__ == '__main__':
         args.model_name_or_path = "../../train/model/Meta-Llama-3-8B-Instruct"
         the_model_is = "llama3"
     elif args.model_name_or_path == "llama2":
-        args.model_name_or_path = "../../train/model/llama-2-7b-chat/shakechen/Llama-2-7b-chat-hf"
+        args.model_name_or_path = "../../train/model/llama-2-7b-chat/Llama-2-7b-chat-hf"
         the_model_is = "llama2"
     elif args.model_name_or_path == "mistral":
-        args.model_name_or_path = "../../train/model/Mistral-7b-instrucion/AI-ModelScope/Mistral-7B-Instruct-v0.2"
+        args.model_name_or_path = "../../train/model/Mistral-7b-instrucion/Mistral-7B-Instruct-v0.2"
         the_model_is = "mistral"
     else:
         trimmed_path = args.model_name_or_path.rstrip('/')
