@@ -2,8 +2,8 @@ import os
 import json
 import argparse
 
-os_result = "../../../result/mbpp/"
-os_out = "result/"
+os_result = "result/mbpp/"
+os_out = "train/code/result/"
 
 def main(model_is):
 
