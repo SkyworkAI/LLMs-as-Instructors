@@ -40,6 +40,7 @@ def format_tokens(samples):
             return_sample = f'''<s>[INST] {question}[/INST] A:'''
         return_samples.append(return_sample)
 
+
 if __name__ == '__main__':
 
     if args.model_name_or_path == "llama3":
