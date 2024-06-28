@@ -16,7 +16,7 @@ rm -rf output/
 mkdir -p $OUTPUT_PATH
 model_name_or_path=../model/Mistral-7b-instrucion/AI-ModelScope/Mistral-7B-Instruct-v0.2
 
-deepspeed --include=localhost:0,1,2,3 --master_port 5020 main.py \
+deepspeed --include=localhost:0,1,2,3 --master_port 5020 train/code/main.py \
    --sft_only_data_path result/mistral_LaI_LEC_raw_k_2_train_9000.jsonl \
    --eval_data_file result/mistral_LaI_LEC_raw_k_2_train_9000.jsonl \
    --data_split 10,0,0 \
