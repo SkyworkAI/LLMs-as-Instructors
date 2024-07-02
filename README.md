@@ -144,6 +144,17 @@ pip install -r requirements.txt
 
   If you find  LLMs-as-Instructors useful in your research, please consider citing:
 
+  ```text
+  @misc{ying2024llmsasinstructorslearningerrorsautomating,
+        title={LLMs-as-Instructors: Learning from Errors Toward Automating Model Improvement}, 
+        author={Jiahao Ying and Mingbao Lin and Yixin Cao and Wei Tang and Bo Wang and Qianru Sun and Xuanjing Huang and Shuicheng Yan},
+        year={2024},
+        eprint={2407.00497},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2407.00497}, 
+  }
   ```
   
-  ```
+  
+
